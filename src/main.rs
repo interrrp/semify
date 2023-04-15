@@ -1,5 +1,7 @@
 use std::{env, fs};
 
+mod tests;
+
 fn main() {
     let args = env::args();
     if args.len() < 2 {
@@ -16,7 +18,7 @@ fn main() {
 }
 
 /// Add a semicolon to the end of the line if it should.
-fn add_semicolon(line: &str) -> String {
+pub fn add_semicolon(line: &str) -> String {
     if should_add_semicolon(line) {
         format!("{};", line)
     } else {
