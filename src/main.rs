@@ -17,7 +17,7 @@ fn main() {
     }
 }
 
-/// Add a semicolon to the end of the line if it should.
+/// Adds a semicolon to the end of the line if it should.
 pub fn add_semicolon(line: &str) -> String {
     if should_add_semicolon(line) {
         format!("{};", line)
@@ -26,12 +26,12 @@ pub fn add_semicolon(line: &str) -> String {
     }
 }
 
-/// Determine whether a semicolon should be added to the end of the line.
+/// Determines whether a semicolon should be added to the end of the line.
 fn should_add_semicolon(line: &str) -> bool {
     !is_str_whitespace(line) && !line.ends_with(":") && !line.ends_with(";")
 }
 
-/// Determine whether a string is empty or contains only whitespace.
+/// Determines whether a string is empty or contains only whitespace.
 fn is_str_whitespace(s: &str) -> bool {
     s.chars().all(char::is_whitespace)
 }
